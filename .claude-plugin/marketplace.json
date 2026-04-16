@@ -6,10 +6,10 @@
   },
   "plugins": [
     {
-      "name": "qty-tools",
+      "name": "qty-util",
       "description": "Everyday CLI utilities: markdown-to-clipboard (md2clip) for pasting into Notion with proper formatting.",
       "version": "1.0.0",
-      "source": "./plugins/qty-tools",
+      "source": "./plugins/qty-util",
       "category": "utilities"
     }
   ]
