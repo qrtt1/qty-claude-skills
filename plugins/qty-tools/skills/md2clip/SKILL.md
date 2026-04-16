@@ -1,5 +1,5 @@
 ---
-name: qty-md2clip
+name: md2clip
 description: Deploy md2clip — a CLI tool that converts markdown (stdin) to rich text on the macOS clipboard, formatted so Notion interprets it as proper blocks (headings, lists, tables) instead of a code block or flat text. Trigger when user wants to set up md2clip, install the markdown-to-clipboard tool, or asks how to paste markdown into Notion with proper formatting.
 ---
 
