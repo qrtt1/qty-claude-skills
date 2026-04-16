@@ -23,6 +23,7 @@ which uv || echo "uv not found — install: brew install uv"
 執行轉換（`<skill-base-dir>` 是本 SKILL.md 所在目錄）：
 
 ```bash
+chmod +x <skill-base-dir>/assets/md2clip
 cat <file.md> | uv run <skill-base-dir>/assets/md2clip
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "qty-util",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Everyday CLI utilities: md2clip for Notion clipboard, init for project scaffolding.",
   "author": {
     "name": "qrtt1"
