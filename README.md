@@ -1,6 +1,6 @@
 # qty-claude-skills
 
-Claude Code skills for everyday use.
+個人日常使用的 Claude Code skills，以及一份實際在跑的 CLAUDE.md——記錄了讓 AI agent 寫日誌、開工回顧、delegation 等工作習慣。有興趣的人可以參考看看。
 
 ## Install
 
