@@ -1,0 +1,8 @@
+{
+  "name": "qty-tools",
+  "version": "1.0.0",
+  "description": "Everyday CLI utilities: markdown-to-clipboard (md2clip) for pasting into Notion with proper formatting.",
+  "author": {
+    "name": "qrtt1"
+  }
+}
