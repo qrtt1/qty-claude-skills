@@ -1,85 +1,38 @@
 ---
 name: md2clip
-description: Deploy md2clip — a CLI tool that converts markdown (stdin) to rich text on the macOS clipboard, formatted so Notion interprets it as proper blocks (headings, lists, tables) instead of a code block or flat text. Trigger when user wants to set up md2clip, install the markdown-to-clipboard tool, or asks how to paste markdown into Notion with proper formatting.
+description: Convert markdown to rich text on the macOS clipboard, formatted so Notion interprets it as proper blocks (headings, lists, tables) instead of a code block or flat text. Trigger when user wants to copy markdown to clipboard for Notion, or asks to paste markdown into Notion with proper formatting.
 ---
 
-# TL Util md2clip Setup
+# TL Util md2clip
 
-部署 `md2clip` 到 `~/bin/md2clip`。
-
-用途：將 markdown 轉成 Notion 可正確解析的 rich text，貼上後 H1/H2/list/table 都會變成對應的 Notion block，不會退化成 code block 或純文字。
+將 markdown 轉成 Notion 可正確解析的 rich text 並放到剪貼簿。貼上後 H1/H2/list/table 都會變成對應的 Notion block。
 
 **Asset 位置**（與本 SKILL.md 同目錄下的 `assets/`）：
 - `assets/md2clip`
 
 ---
 
-## Phase 0: Pre-check
+## 使用
 
-確認 `~/bin/` 存在且在 PATH 中：
-
-```bash
-ls ~/bin/ 2>/dev/null || echo "~/bin not found"
-echo $PATH | tr ':' '\n' | grep -q "$HOME/bin" && echo "in PATH" || echo "NOT in PATH"
-```
-
-- `~/bin/` 不存在 → 建立並提醒使用者將 `$HOME/bin` 加入 PATH
-- 不在 PATH → 提醒使用者在 shell 設定檔加入 `export PATH="$HOME/bin:$PATH"`
-
-確認 `uv` 可用：
+確認 `uv` 可用，然後直接從 asset 執行：
 
 ```bash
-which uv && uv --version
+which uv || echo "uv not found — install: brew install uv"
 ```
 
-`uv` 不可用 → 列出安裝建議（`brew install uv` 或 `curl -LsSf https://astral.sh/uv/install.sh | sh`），結束。
-
----
-
-## Phase 1: 部署 md2clip
-
-比對現有版本與 asset：
+執行轉換（`<skill-base-dir>` 是本 SKILL.md 所在目錄）：
 
 ```bash
-diff ~/bin/md2clip <skill-assets>/md2clip && echo "NO_DIFF" || echo "HAS_DIFF"
+cat <file.md> | uv run <skill-base-dir>/assets/md2clip
 ```
 
-- 無差異 → 印「md2clip 已是最新版，跳過」
-- 有差異或不存在 → 備份後部署：
+或傳入字串：
 
 ```bash
-[ -f ~/bin/md2clip ] && cp ~/bin/md2clip ~/bin/md2clip.bak
-cp <skill-assets>/md2clip ~/bin/md2clip
-chmod +x ~/bin/md2clip
+printf "# Title\n\n內文\n" | uv run <skill-base-dir>/assets/md2clip
 ```
 
----
-
-## Phase 2: Verify
-
-```bash
-diff ~/bin/md2clip <skill-assets>/md2clip && echo "OK"
-[ -x ~/bin/md2clip ] && echo "executable OK"
-```
-
-冒煙測試（確認能執行、依賴自動安裝）：
-
-```bash
-printf "# Hello\n\n- a\n- b\n" | ~/bin/md2clip
-```
-
-預期：stderr 印出 `Copied (N chars md → N chars html)`，exit code 0。
-
----
-
-## 使用方式
-
-```bash
-cat file.md | md2clip          # 轉整份檔案
-printf "# Title\n\n內文\n" | md2clip  # 轉字串
-```
-
-複製後直接貼到 Notion，H1/H2/list/table 會自動轉成對應的 Notion block。
+預期：stderr 印出 `Copied (N chars md → N chars html)`，exit code 0。複製後直接貼到 Notion。
 
 ---
 
