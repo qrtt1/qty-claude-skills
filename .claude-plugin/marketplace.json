@@ -1,0 +1,16 @@
+{
+  "name": "qty-claude-skills",
+  "description": "Claude Code skills for everyday use by qrtt1",
+  "owner": {
+    "name": "qrtt1"
+  },
+  "plugins": [
+    {
+      "name": "qty-tools",
+      "description": "Everyday CLI utilities: markdown-to-clipboard (md2clip) for pasting into Notion with proper formatting.",
+      "version": "1.0.0",
+      "source": "./plugins/qty-tools",
+      "category": "utilities"
+    }
+  ]
+}
