@@ -1,0 +1,8 @@
+{
+  "name": "qty-daily",
+  "version": "1.0.0",
+  "description": "Daily workflow utilities: standup report, task management, and working context tools.",
+  "author": {
+    "name": "qrtt1"
+  }
+}

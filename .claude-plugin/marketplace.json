@@ -11,6 +11,13 @@
       "version": "1.1.0",
       "source": "./plugins/qty-util",
       "category": "utilities"
+    },
+    {
+      "name": "qty-daily",
+      "description": "Daily workflow utilities: standup report, task management, and working context tools.",
+      "version": "1.0.0",
+      "source": "./plugins/qty-daily",
+      "category": "utilities"
     }
   ]
 }
