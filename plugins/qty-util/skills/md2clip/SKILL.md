@@ -8,7 +8,7 @@ description: Convert markdown to rich text on the macOS clipboard, formatted so 
 將 markdown 轉成 Notion 可正確解析的 rich text 並放到剪貼簿。貼上後 H1/H2/list/table 都會變成對應的 Notion block。
 
 **Asset 位置**（與本 SKILL.md 同目錄下的 `assets/`）：
-- `assets/md2clip`
+- `assets/md2clip.py`
 
 ---
 
@@ -23,14 +23,13 @@ which uv || echo "uv not found — install: brew install uv"
 執行轉換（`<skill-base-dir>` 是本 SKILL.md 所在目錄）：
 
 ```bash
-chmod +x <skill-base-dir>/assets/md2clip
-cat <file.md> | uv run <skill-base-dir>/assets/md2clip
+cat <file.md> | uv run --script <skill-base-dir>/assets/md2clip.py
 ```
 
 或傳入字串：
 
 ```bash
-printf "# Title\n\n內文\n" | uv run <skill-base-dir>/assets/md2clip
+printf "# Title\n\n內文\n" | uv run --script <skill-base-dir>/assets/md2clip.py
 ```
 
 預期：stderr 印出 `Copied (N chars md → N chars html)`，exit code 0。複製後直接貼到 Notion。
