@@ -1,6 +1,6 @@
 # qty-claude-skills
 
-個人日常使用的 Claude Code skills，以及一份實際在跑的 CLAUDE.md——記錄了讓 AI agent 寫日誌、開工回顧、delegation 等工作習慣。有興趣的人可以參考看看。
+個人日常使用的 Claude Code skills，以及一份實際在跑的 CLAUDE.md——記錄了讓 AI agent 寫日誌、開工回顧、delegation 等工作習慣。留給有興趣的朋友參考。
 
 ## Install
 
@@ -25,3 +25,7 @@ claude plugin install qty-daily@qty-claude-skills
 |-------|-------------|
 | standup | Daily standup - scan recent work, pending plans, and suggest next steps |
 | i-am-lazy | Delegation mode - autonomously complete remaining work when user steps away |
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
