@@ -4,6 +4,7 @@
 
 ## Install
 
+> [!IMPORTANT]
 > 這是一個作為個人觀察記錄用的 repository，你不一定要真的安裝它。讓你的 AI agent 去把它轉移到你偏好的工作環境即可。
 
 ```bash
