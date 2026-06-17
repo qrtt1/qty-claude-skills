@@ -22,6 +22,7 @@ claude plugin install qty-daily@qty-claude-skills
 | md2clip | Convert markdown to rich text on macOS clipboard, for pasting into Notion with proper block formatting |
 | init | Initialize a new project with git, venv, .gitignore, and CLAUDE.md |
 | proxmox-snap | Manage Proxmox VM snapshots (list/create/rollback/delete) on the QEMU VM selected in a logged-in Proxmox Chrome tab on macOS |
+| qrcode | Generate a QR code in the terminal from any string or URL |
 
 ### qty-daily
 
