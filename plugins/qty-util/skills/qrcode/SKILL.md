@@ -16,3 +16,5 @@ The script path is relative to this skill's base directory. Use the absolute pat
 The output is ASCII art printed to stdout, suitable for terminal display and scanning with a phone.
 
 After running the command, always embed the full output inside a fenced code block in your text response so it is visible without expanding the tool result panel.
+
+This skill is one-time and contextual. Do not automatically reuse it for subsequent responses unless the user explicitly requests it again.
